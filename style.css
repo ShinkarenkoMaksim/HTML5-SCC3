@@ -5,6 +5,9 @@ body {
 	box-sizing: content-box;
 }
 
+a {
+	text-decoration: none;
+}
 /*======Убираем дефолтные рамки===========*/
 *:active, *:focus {
   outline: none;
@@ -12,6 +15,7 @@ body {
 *::-moz-focus-inner {
   border: 0;
 }
+
 
 /*===========Хедер==============*/
 .header {
@@ -34,13 +38,15 @@ body {
 .banners,
 .banners__left,
 .banners__right,
+.featured,
 .featured__flex,
 .banner__big,
 .banner__big__right,
 .navigation,
-.banner__big__right > div,
+.banner__big__right__container,
 .subscribe_container,
 .subscribe__comment,
+.brand__info__logo,
 .footer__top,
 .footer__bottom__container,
 .footer__social {
@@ -60,35 +66,33 @@ body {
 
 .logo {
 	margin-right: 10px;
-	width: 59px;
-	height: 51px;
+/*	width: 59px;
+	height: 51px;*/
 }
 
 .logo__link {
 	text-decoration: none;
+    margin-right: 37px;
+    -ms-align-items: center;
+    align-items: center;
 }
 
 .brand {
 	color: #222222;
 	font-size: 27px;
 	font-weight: 300;
-	line-height: 52px;
 	text-transform: uppercase;
 	letter-spacing: 0.68px;
-	margin: 0;
 	position: relative;
     top: 3px;
-    margin-right: 37px;
 }
 
 .brand span{
 	color: #f16d7f;
 	font-weight: 700;
-	letter-spacing: 0.68px;
 }
 
 .header__button {
-	width: 87px;
 	height: 38px;
 	border-radius: 3px 0 0 3px;
 	border: 1px solid #e6e6e6;
@@ -97,9 +101,10 @@ body {
 	background-image: -o-linear-gradient(#f9f9f9 0%, #f5f5f5 100%);
 	background-image: linear-gradient(#f9f9f9 0%, #f5f5f5 100%);
 	padding-left: 15px;
+	padding-right: 22px;
 }
 
-.header__button p {
+.header__button__text {
 	color: #222222;
 	font-size: 14px;
 	font-weight: 300;
@@ -117,21 +122,18 @@ body {
 	cursor: pointer;
 }
 
-.header__form input {
-	width: 280px;
-	height: 38px;
+.header__input {
+	width: 265px;
 	border: 1px solid #e6e6e6;
 	border-left: 0;
-	background-color: #ffffff;
-	padding: 0;
-	padding-left: 15px;
+	padding: 0 15px;
 	color: #a4a4a4;
 	font-size: 14px;
 	font-weight: 300;
 	line-height: 32px;
 }
 
-.header__form button {
+.header__btn {
 	width: 37px;
 	border-radius: 0 3px 3px 0;
 	border: 1px solid #e6e6e6;
@@ -139,11 +141,11 @@ body {
 	background-color: #ffffff;
 }
 
-.header__form button:hover {
+.header__btn:hover {
 	cursor: pointer;
 }
 
-.header__form button i {
+.header__btn i {
 	color: #a4a4a4;
 	font-size: 14px;
 }
@@ -156,15 +158,15 @@ body {
 	background-color: #f16d7f;
 	text-decoration: none;
 	line-height: 38px;
-    padding: 0 17px 0 17px;}
+    padding: 0 17px;
+}
 
 .cart {
 	margin-right: 26px;
 }
 
-.cart img {
-	position: relative;
-	top: 8px;
+.cart__img {
+	margin-top: 8px;
 }
 
 .menu_right i {
@@ -172,32 +174,24 @@ body {
 }
 
 .navigation {
-	height: 51px;
 	justify-content: center;
+	background-color: #fff;
 }
 
-.navigation ul {
+.navigation__list {
 	justify-content: space-between;
-	height: 100%;
 	display: flex;
 	list-style-type: none;
 	margin: 0;
 	padding-left: 10px;
 }
 
-.navigation ul li {
-	margin-right: 15px;
-}
-
-.navigation ul li a {
-	padding: 3px 15px 0 15px;
-}
-
-.navigation ul a:hover {
+.navigation__link:hover {
 	border-bottom: 3px solid #ef5b70;
 }
 
-.navigation ul a {
+.navigation__link {
+	padding: 3px 15px 0;
 	display: block;
 	text-decoration: none;
 	color: #222222;
@@ -206,6 +200,7 @@ body {
 	line-height: 45px;
 	text-transform: uppercase;
 	border-bottom: 3px solid transparent;
+	margin-right: 15px;
 }
 
 /*===========ПРОМО==============*/
@@ -235,9 +230,8 @@ body {
 	font-weight: 900;
 	text-transform: uppercase;	
 	letter-spacing: 1.5px;
-	margin: 0;
+	margin: 0 0 15px;
 	line-height: 43px;
-	margin-bottom: 15px;
 }
 
 .promo__small {
@@ -277,8 +271,7 @@ body {
 	justify-content: space-between;
 }
 
-.banners__left > a,
-.banners__right > a {
+.banners__link {
 	display: block;
 	position: relative;
 	text-decoration: none;
@@ -289,7 +282,6 @@ body {
 	padding: 0 19px;
 	height: 82px;
 	top: 26px;
-	left: 0;
 	background-color: white;
 	color: #222222;
 	font-size: 18px;
@@ -307,16 +299,15 @@ body {
 /*===========Популярное==============*/
 .featured {
 	width: 1140px;
-	margin: 0 auto 132px auto;
+	margin: 0 auto 132px;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
 }
 
-.featured > a {
-	text-decoration: none;
-	text-align: left;
-	display: inline-block;
-}
-
-.featured h2 {
+.featured__head {
 	color: #222222;
 	font-size: 30px;
 	font-weight: 700;
@@ -326,14 +317,14 @@ body {
 	margin: 0 0 16px 0;
 }
 
-.featured > p {
+.featured__text {
 	color: #9f9f9f;
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 14px;
 	letter-spacing: 0.35px;
 	text-align: center;
-	margin: 0 0 60px 0;
+	margin: 0 0 60px;
 }
 
 .featured__flex {
@@ -347,11 +338,13 @@ body {
 
 .featured__product {
 	margin-bottom: 39px;
-	height: 364px;
+	padding-bottom: 11px;
 	position: relative;
+	width: 261px;
 }
 
-.featured__product p {
+.featured__price,
+.featured__title {
 	margin: 17px 0 15px 17px;
 	line-height: 11px;
 }
@@ -359,7 +352,7 @@ body {
 .featured__title {
 	color: #222222;
 	font-size: 13px;
-	font-weight: 400;
+	font-weight: 700;
 	text-transform: uppercase;
 }
 
@@ -373,7 +366,6 @@ body {
 .featured__hover {
 	display: none;
 	position: absolute;
-	left: 0;
 	top: 0;
 	width: 100%;
 	height: 100%;
@@ -400,21 +392,26 @@ body {
 	line-height: 20px;
 }
 
+.featured__cart:hover {
+	-webkit-box-shadow: 0 0 7px white;
+	box-shadow: 0 0 7px white;
+}
+
 .featured__cart:active{
 	top: 99px;
 }
 
-.featured__hover + a img {
+.featured__cart__img {
 	padding-right: 8px;
 	float: left;
 }
 
-.featured__hover p {
+.product__stars {
 	color: #e4af48;
 	font-size: 13px;
 	position: absolute;
-	top: 306px;
-	left: 154px;
+	top: 310px;
+	left: 175px;
 }
 
 .featured__product:hover {
@@ -422,25 +419,18 @@ body {
 	-webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
 }
 
-.featured__product:hover a{
+.featured__product:hover .featured__cart,
+.featured__product:hover .featured__hover {
 	display: block;
 }
 
-.featured__cart:active{
-	t
-}
-
 .featured__button {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 	margin: 0 auto;
-	height: 48px;
 	background-color: #f16d7f;
 	color: #ffffff;
 	font-size: 16px;
 	font-weight: 700;
-	line-height: 54px;
+	line-height: 48px;
 	letter-spacing: 0.4px;
 	padding-left: 24px;
 	padding-right: 19px;
@@ -454,7 +444,7 @@ body {
 .banner__big {
 	width: 1140px;
 	height: 529px;
-	margin: 0 auto 97px auto;
+	margin: 0 auto 97px;
 }
 
 .banner__big__left {
@@ -472,7 +462,7 @@ body {
 	letter-spacing: 1.5px;
 }
 
-.banner__big__left__text p {
+.banner__big__text {
 	margin: 0;
 	line-height: 40px;
 }
@@ -501,24 +491,23 @@ body {
 	padding-bottom: 66px;
 }
 
-.banner__big__right > div {
+.banner__big__right__container {
 	-ms-align-items: start;
 	align-items: start;
 	justify-content: space-between;
 }
 
-.banner__big__right > div > div {
+.banner__big__right__sect {
 	width: 219px;
 }
 
-.banner__big__right h3,
-.banner__big__right p {
+.banner__big__head,
+.banner__big__right__text {
 	margin: 0;
-
+	color: #fbfbfb;
 }
 
-.banner__big__right h3 {
-	color: #fbfbfb;
+.banner__big__head {
 	font-size: 20px;
 	font-weight: 700;
 	letter-spacing: 0.5px;
@@ -526,8 +515,7 @@ body {
 	margin-top: 5px;
 }
 
-.banner__big__right p {
-	color: #fbfbfb;
+.banner__big__right__text {
 	font-size: 14px;
 	font-weight: 300;
 	line-height: 24px;
@@ -557,14 +545,14 @@ body {
 	padding-top: 111px;
 }
 
-.subscribe__comment img {
+.subscribe__avatar {
 	height: 83px;
 	width: 83px;
 	border-radius: 50%;
 	margin-right: 28px;
 }
 
-.subscribe__comment > div {
+.comment__container {
 	max-width: 400px;
 }
 
@@ -600,7 +588,7 @@ body {
 	width: 100%;
 }
 
-.subscribe__switch a {
+.subscribe__switch__link {
 	display: inline-block;
 	width: 38px;
 	height: 6px;
@@ -608,7 +596,7 @@ body {
 	margin-right: 12px;
 }
 
-.subscribe__switch a:nth-child(2) {
+.subscribe__switch__link__act {
 	border-bottom: 4px solid #f16d7f;
 }
 
@@ -617,7 +605,7 @@ body {
 	text-align: center;
 }
 
-.subscribe__form h3 {
+.subscribe__form__head {
 	color: #222224;
 	font-weight: 700;
 	font-size: 14px;
@@ -627,29 +615,30 @@ body {
 	margin: 0 0 30px 0;
 }
 
-.subscribe__form h3 span {
+.subscribe__form__head span {
 	font-size: 24px;
 	letter-spacing: 0.6px;
 }
 
-.subscribe__form input {
+.subscribe__form__input {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	width: 282px;
+	width: 254px;
 	height: 46px;
 	border: 0;
 	border-top-left-radius: 23px;
 	border-bottom-left-radius: 23px;
 	background-color: #e1e1e1;
 	padding-left: 28px;
+	padding-right: 28px;
 	color: #222224;
 	font-size: 14px;
 	font-weight: 400;
 	letter-spacing: 0.35px;
 }
 
-.subscribe__form button {
+.subscribe__form__btn {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -663,11 +652,9 @@ body {
 	font-weight: 400;
 	line-height: 46px;
 	letter-spacing: 0.35px;
-	position: relative;
-	top: 1px;
 }
 
-.subscribe__form button:hover {
+.subscribe__form__btn:hover {
 	cursor: pointer;
 }
 
@@ -682,42 +669,38 @@ body {
 	margin-bottom: 60px;
 }
 
-.brand__info img {
-	float: left;
+.brand__info__png {
 	margin-bottom: 25px;
 	margin-right: 13px;
 }
 
-.brand__info h1 {
+.brand__info__head {
 	color: #3e3e40;
 	font-size: 27px;
 	font-weight: 400;
-	line-height: 32px;
+	line-height: 23px;
 	text-transform: uppercase;
 	letter-spacing: 0.68px;
-	position: relative;
-	top: 15px;
 }
 
-.brand__info h1 span {
+.brand__info__head span {
 	color: #f16d7f;
 	font-weight: 700;
 }
 
-.brand__info p {
+.brand__info__text {
 	width: 450px;
 	color: #898989;
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 24px;
 	letter-spacing: 0.35px;
-	clear: left;
 	margin-bottom: 25px;
 	max-width: 430px;
 }
 
 /*===========Футер==============*/
-.footer__links h3 {
+.footer__links__head {
 	color: #f16d7f;
 	font-size: 18px;
 	font-weight: 900;
@@ -728,7 +711,7 @@ body {
 	margin-top: 25px;
 }
 
-.footer__links a {
+.footer__links__link {
 	color: #898989;
 	font-size: 16px;
 	font-weight: 400;
@@ -772,7 +755,7 @@ body {
 	align-items: center;
 }
 
-.footer__social > a {
+.footer__social__icon {
 	display: block;
 	width: 32px;
 	height: 32px;
@@ -788,23 +771,23 @@ body {
 	line-height: 36px;
 }
 
-.footer__social > a:hover {
+.footer__social__icon:hover {
 	background-color: #f16d7f;
 }
 
-.footer__social > a:hover i {
+.footer__social__icon:hover i {
 	color: #f7f7f8;
 }
 
 .featured__button:active,
-.subscribe__form button:active,
-.footer__social > a:active {
+.subscribe__form__btn:active,
+.footer__social__icon:active {
 	background-color: #eeeeee;
 }
 
 .featured__button:active,
-.subscribe__form button:active,
-.footer__social > a:active i {
+.subscribe__form__btn:active,
+.footer__social__icon:active i {
 	color: #d6d6d6;
 }
 
