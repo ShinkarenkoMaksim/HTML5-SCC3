@@ -277,6 +277,7 @@ ul {
 	position: absolute;
 	top: 35px;
 	left: -15px;
+	z-index: 99;
 }
 
 .cart__container {
@@ -304,12 +305,10 @@ ul {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	
 	width: 262px;
 	border-radius: 5px;
 	background-color: #ffffff;
 	padding: 5px 15px 20px 17px;
-	z-index: 100;
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
 	border: 1px solid #e9e9e9;
 	
@@ -1245,6 +1244,7 @@ ul {
 	width: 70%;
 	height: 6px;
 	background-color: #f16d7f;
+	z-index: 50;
 }
 
 .range-toggle {
@@ -1255,6 +1255,7 @@ ul {
 	background-color: #f16d7f;
 	border-radius: 50%;
 	cursor: pointer;
+	z-index: 50;
 }
 
 .range-toggle-min {
@@ -1551,8 +1552,14 @@ ul {
 	margin-right: 14px;
 }
 
+.pages__link:hover {
+	color: #ef5b70;
+}
+
 .link__current {
 	color: #ef5b70;
+	pointer-events: none;
+    cursor: default;
 }
 
 .link__nomarg {
