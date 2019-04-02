@@ -132,6 +132,13 @@ ul {
 	position: relative;
 }
 
+.header__button:hover,
+.header__btn:hover,
+.header__input:hover {
+	-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
 .header__button__text {
 	color: #222222;
 	font-size: 14px;
@@ -773,7 +780,10 @@ ul {
 
 .featured__cart:hover,
 .product__hearth:hover,
-.product__round:hover {
+.product__round:hover,
+.header__button:hover,
+.header__btn:hover,
+.header__input:hover {
 	-webkit-box-shadow: 0 0 7px white;
 	box-shadow: 0 0 7px white;
 }
@@ -796,9 +806,14 @@ ul {
 }
 
 .featured__product:hover,
-.products_item:hover {
+.products_item:hover,
+.banners__link:hover img {
 	box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
 	-webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
+}
+
+.logo__link:hover .brand {
+	text-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
 }
 
 .featured__product:hover .featured__cart,
@@ -1755,9 +1770,9 @@ ul {
 }
 
 .carousel__btn {
-	border: 1px solid #000;
+	border: 1px solid #eaeaea;
 	background-color: #ffffff;
-	color: #000;
+	color: #4a4a4a;
 	font-size: 16px;
 	font-weight: 700;
 	width: 537px;
