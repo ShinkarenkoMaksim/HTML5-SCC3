@@ -1643,9 +1643,14 @@ ul {
 	margin-bottom: 70px;
 }
 
+.carousel__rel {
+	position: relative;
+	border: 1px solid #eaeaea;
+	background-color: #f7f7f7;
+}
+
 .product__carousel {
 	position: relative;
-	margin-bottom: 760px;
 }
 
 .carousel__slider {
@@ -1656,8 +1661,7 @@ ul {
 .carousel__item {
 	position: relative;
 	width: 100%;
-	border: 1px solid #eaeaea;
-	background-color: #f7f7f7;
+	
 }
 
 .slider__img {
@@ -1668,22 +1672,22 @@ ul {
 .caption__container {
 	position: relative;
 	width: 1140px;
-	margin: 0 auto;
+	margin: 0 auto 22px;
 }
 
 .carousel__caption {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	position: absolute;
+	position: relative;
 	width: 1140px;
-	height: 730px;
 	margin: 0 auto;
 	border: 1px solid #eaeaea;
 	background-color: #ffffff;
 	text-align: center;
 	top: -88px;
 	padding-top: 70px;
+	padding-bottom: 122px;
 }
 
 .carousel__h4 {
