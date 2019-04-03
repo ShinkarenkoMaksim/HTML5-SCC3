@@ -135,8 +135,8 @@ ul {
 .header__button:hover,
 .header__btn:hover,
 .header__input:hover {
-	-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+	-webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+	box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
 }
 
 .header__button__text {
@@ -780,10 +780,7 @@ ul {
 
 .featured__cart:hover,
 .product__hearth:hover,
-.product__round:hover,
-.header__button:hover,
-.header__btn:hover,
-.header__input:hover {
+.product__round:hover {
 	-webkit-box-shadow: 0 0 7px white;
 	box-shadow: 0 0 7px white;
 }
