@@ -482,6 +482,9 @@ ul {
 .menu_right i {
   margin-left: 8px; }
 
+.products__header_d-none {
+  display: none; }
+
 .navigation {
   background-color: #fff;
   -webkit-box-pack: center;
@@ -529,10 +532,7 @@ ul {
   border-radius: 5px;
   background-color: #fff;
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
-  -webkit-transition: display 0.3s;
-  -o-transition: display 0.3s;
-  transition: display 0.3s; }
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08); }
 
 .navigation__list:hover .nav__drop {
   display: -moz-flex;
@@ -545,6 +545,9 @@ ul {
   -webkit-animation: scaleAnimY 0.3s;
   animation: scaleAnimY 0.3s; }
 
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .nav__drop {
+    width: 820px; } }
 .nav__drop__link:hover {
   color: #f16d7f; }
 
